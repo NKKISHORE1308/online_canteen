@@ -1,19 +1,33 @@
 package com.example.online.canteen.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+
+@Table(
+        name = "products",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"product_id"})
+)
+
 public class Products {
 
     @Id
+    @Column(unique = true)
     private String product_id;
-
+    private String category_name;
     private String product_name;
-
     private float product_price;
-
     private String product_description;
+
+    public int getProduct_stock() {
+        return product_stock;
+    }
+
+    public void setProduct_stock(int product_stock) {
+        this.product_stock = product_stock;
+    }
+
+    private int product_stock;
 
     public String getProduct_id() {
         return product_id;
@@ -45,5 +59,13 @@ public class Products {
 
     public void setProduct_description(String product_description) {
         this.product_description = product_description;
+    }
+
+    public String getCategory_name() {
+        return category_name;
+    }
+
+    public void setCategory_name(String category_name) {
+        this.category_name = category_name;
     }
 }
