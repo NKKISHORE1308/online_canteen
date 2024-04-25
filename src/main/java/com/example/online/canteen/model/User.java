@@ -12,15 +12,15 @@ public class User {
     private String email_id;
     private String password;
 
-    private String feedback;
+   /* private String feedback;*/
 
-    public String getFeedback() {
+    /*public String getFeedback() {
         return feedback;
     }
 
     public void setFeedback(String feedback) {
         this.feedback = feedback;
-    }
+    }*/
 
     public ERole getRole() {
         return role;
@@ -66,11 +66,13 @@ public class User {
         this.email_id = email_id;
     }
 
-    public String getPassword() {
+    public String get_Password() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void set_Password(String password) {
         this.password = password;
     }
+
+
 }
